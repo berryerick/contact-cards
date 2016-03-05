@@ -9,7 +9,21 @@
 		$(document).ready(function(){
 			console.log('jquery is running');
 			$('form').submit(function(){
-				
+				var name = $('input.first').val() + " " + $('input.last').val();
+				var description = $('textarea.description').val();
+				console.log(name);
+				console.log(description);
+				// $('div.right').append('<div class="card"><h1>' + first + ' ' + last '</h1><h4>' + description + '</h4></div>');
+				$('div.right').append('<div class="card"><h1>' + name + '</h1><h4>' + description + '</h4></div>');
+				$('h4:last').toggle();
+				$('input.first').val('');
+				$('input.last').val('');
+				$('textarea.description').val('');
+				return false;
+			})
+			$('div.right').on('click', function(){
+				$("h1", this).toggle();
+				$("h4", this).toggle();
 			})
 		})
 	</script>
@@ -18,15 +32,17 @@
 <body>
 	<div class="container">
 		<form>
-			<label for="first">First name:</label>
-			<input type="text" name="first" class="first"></input>
-			<label for="last">Last name:</label>
-			<input type="text" name="last" class="last"></input>
+			<label for="first">First name: <input type="text" name="first" class="first"></input></label>
+			
+			<label for="last">Last name: <input type="text" name="last" class="last"></input></label>
 			<label for="description">Description:</label>
-			<input type="text" name="description" class="description"></input>
-			<input type="submit">Add User</input>
+			<textarea name="description" class="description"></textarea>
+			
+			<input type="submit" value="Add User" class="submit"></input>
 		</form>
-		<div class="right"></div>
+		<div class="right">
+			
+		</div>
 	</div>
 </body>
 </html>
