@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Contact Cards</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			console.log('jquery is running');
+			$('form').submit(function(){
+				
+			})
+		})
+	</script>
+
+</head>
+<body>
+	<div class="container">
+		<form>
+			<label for="first">First name:</label>
+			<input type="text" name="first" class="first"></input>
+			<label for="last">Last name:</label>
+			<input type="text" name="last" class="last"></input>
+			<label for="description">Description:</label>
+			<input type="text" name="description" class="description"></input>
+			<input type="submit">Add User</input>
+		</form>
+		<div class="right"></div>
+	</div>
+</body>
+</html>
